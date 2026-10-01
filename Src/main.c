@@ -122,8 +122,6 @@ int main(void)
     ledInit();
 
 	for(;;){
-		
-		GPIOA->ODR ^= 0x1FC;
         
         for(int i = dir ? 0: 7;dir? i <7:i > 0; dir? i++: i--){
             
