@@ -26,7 +26,7 @@ void initRcc(uint8_t mode){
         RCC->PLLCFGR = (1 << RCC_PLLCFGR_PLLSRC_Pos) |
         (25UL << RCC_PLLCFGR_PLLM_Pos) | (280UL << RCC_PLLCFGR_PLLN_Pos) | (3 << RCC_PLLCFGR_PLLP_Pos);
         RCC->CR |= RCC_CR_PLLON;
-        RCC->CFGR = RCC_CFGR_PPRE1_2 | RCC_CFGR_SW_1;
+        RCC->CFGR = RCC_CFGR_SW_1;
         
         FLASH->ACR = (FLASH->ACR & ~FLASH_ACR_LATENCY) | FLASH_ACR_LATENCY_1WS;
 
@@ -87,7 +87,8 @@ void buttonInit(){
     TIM10->CR1 |= TIM_CR1_OPM_Msk;
     TIM10->DIER |= TIM_DIER_UIE_Msk;
     
-    TIM10->ARR = 100;
+    TIM10->PSC = clockPeriod/10000-1;
+    TIM10->ARR = 500-1;
     
     NVIC_EnableIRQ(EXTI15_10_IRQn);
     NVIC_EnableIRQ(TIM1_UP_TIM10_IRQn);
