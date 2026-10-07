@@ -448,6 +448,11 @@
               <FileType>1</FileType>
               <FilePath>.\Src\potent.c</FilePath>
             </File>
+            <File>
+              <FileName>uartCommunication.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\uartCommunication.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -482,6 +487,11 @@
               <FileName>potent.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Headers\potent.h</FilePath>
+            </File>
+            <File>
+              <FileName>uartCommunication.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Headers\uartCommunication.h</FilePath>
             </File>
           </Files>
         </Group>
