@@ -1,0 +1,118 @@
+Dependencies for Project 'lab1', Target 'Target 1': (DO NOT MODIFY !)
+CompilerVersion: 6160000::V6.16::ARMCLANG
+F (.\startup_stm32f401xc.s)(0x6AABFC3B)(--target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -masm=auto -c-gdwarf-4-I./RTE/_Target_1-ID:/Users/Shash/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 536" -Wa,armasm,--pd,"_RTE_ SETA 1" -Wa,armasm,--pd,"STM32F401xC SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/startup_stm32f401xc.o)
+F (.\system_stm32f4xx.c)(0x6AABFC3B)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I Include/ -I Src/ -I Headers/-I./RTE/_Target_1-ID:/Users/Shash/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F401xC -D_RTE_ -DSTM32F401xC-o ./objects/system_stm32f4xx.o -MD)
+I (Include\stm32f4xx.h)(0x6AABFC3B)
+I (Include\stm32f401xc.h)(0x6AABFC3B)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D42F32)
+I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x60354E20)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D42F32)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D42F32)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D42F32)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D42F32)
+I (Include\system_stm32f4xx.h)(0x6AABFC3A)
+F (.\Include\stm32f4xx.h)(0x6AABFC3B)()
+F (.\Include\stm32f401xc.h)(0x6AABFC3B)()
+F (.\Include\system_stm32f4xx.h)(0x6AABFC3A)()
+F (.\Src\main.c)(0x6AC69DBC)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I Include/ -I Src/ -I Headers/-I./RTE/_Target_1-ID:/Users/Shash/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F401xC -D_RTE_ -DSTM32F401xC-o ./objects/main.o -MD)
+I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x60354E20)
+I (Headers\main.h)(0x6AC69DD7)
+I (Include\stm32f4xx.h)(0x6AABFC3B)
+I (Include\stm32f401xc.h)(0x6AABFC3B)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D42F32)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D42F32)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D42F32)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D42F32)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D42F32)
+I (Include\system_stm32f4xx.h)(0x6AABFC3A)
+I (Headers\rcc_conf.h)(0x6ABF5DF8)
+I (Headers\delay.h)(0x6ABF5FB6)
+I (Headers\led.h)(0x6ABF630D)
+I (Headers\button.h)(0x6ABF64FD)
+I (Headers\potent.h)(0x6AC69DF4)
+F (.\Src\rcc_conf.c)(0x6ABF5D84)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I Include/ -I Src/ -I Headers/-I./RTE/_Target_1-ID:/Users/Shash/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F401xC -D_RTE_ -DSTM32F401xC-o ./objects/rcc_conf.o -MD)
+I (Headers\rcc_conf.h)(0x6ABF5DF8)
+I (Headers\main.h)(0x6AC69DD7)
+I (Include\stm32f4xx.h)(0x6AABFC3B)
+I (Include\stm32f401xc.h)(0x6AABFC3B)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D42F32)
+I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x60354E20)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D42F32)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D42F32)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D42F32)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D42F32)
+I (Include\system_stm32f4xx.h)(0x6AABFC3A)
+I (Headers\delay.h)(0x6ABF5FB6)
+I (Headers\led.h)(0x6ABF630D)
+I (Headers\button.h)(0x6ABF64FD)
+I (Headers\potent.h)(0x6AC69DF4)
+F (.\Src\delay.c)(0x6ABF607A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I Include/ -I Src/ -I Headers/-I./RTE/_Target_1-ID:/Users/Shash/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F401xC -D_RTE_ -DSTM32F401xC-o ./objects/delay.o -MD)
+I (Headers\delay.h)(0x6ABF5FB6)
+I (Headers\main.h)(0x6AC69DD7)
+I (Include\stm32f4xx.h)(0x6AABFC3B)
+I (Include\stm32f401xc.h)(0x6AABFC3B)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D42F32)
+I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x60354E20)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D42F32)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D42F32)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D42F32)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D42F32)
+I (Include\system_stm32f4xx.h)(0x6AABFC3A)
+I (Headers\rcc_conf.h)(0x6ABF5DF8)
+I (Headers\led.h)(0x6ABF630D)
+I (Headers\button.h)(0x6ABF64FD)
+I (Headers\potent.h)(0x6AC69DF4)
+F (.\Src\led.c)(0x6ABF64EA)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I Include/ -I Src/ -I Headers/-I./RTE/_Target_1-ID:/Users/Shash/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F401xC -D_RTE_ -DSTM32F401xC-o ./objects/led.o -MD)
+I (Headers\led.h)(0x6ABF630D)
+I (Headers\main.h)(0x6AC69DD7)
+I (Include\stm32f4xx.h)(0x6AABFC3B)
+I (Include\stm32f401xc.h)(0x6AABFC3B)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D42F32)
+I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x60354E20)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D42F32)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D42F32)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D42F32)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D42F32)
+I (Include\system_stm32f4xx.h)(0x6AABFC3A)
+I (Headers\rcc_conf.h)(0x6ABF5DF8)
+I (Headers\delay.h)(0x6ABF5FB6)
+I (Headers\button.h)(0x6ABF64FD)
+I (Headers\potent.h)(0x6AC69DF4)
+F (.\Src\button.c)(0x6ABF64E4)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I Include/ -I Src/ -I Headers/-I./RTE/_Target_1-ID:/Users/Shash/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F401xC -D_RTE_ -DSTM32F401xC-o ./objects/button.o -MD)
+I (Headers\button.h)(0x6ABF64FD)
+I (Headers\main.h)(0x6AC69DD7)
+I (Include\stm32f4xx.h)(0x6AABFC3B)
+I (Include\stm32f401xc.h)(0x6AABFC3B)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D42F32)
+I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x60354E20)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D42F32)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D42F32)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D42F32)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D42F32)
+I (Include\system_stm32f4xx.h)(0x6AABFC3A)
+I (Headers\rcc_conf.h)(0x6ABF5DF8)
+I (Headers\delay.h)(0x6ABF5FB6)
+I (Headers\led.h)(0x6ABF630D)
+I (Headers\potent.h)(0x6AC69DF4)
+F (.\Src\potent.c)(0x6AC69D93)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I Include/ -I Src/ -I Headers/-I./RTE/_Target_1-ID:/Users/Shash/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F401xC -D_RTE_ -DSTM32F401xC-o ./objects/potent.o -MD)
+I (Headers\potent.h)(0x6AC69DF4)
+I (Headers\main.h)(0x6AC69DD7)
+I (Include\stm32f4xx.h)(0x6AABFC3B)
+I (Include\stm32f401xc.h)(0x6AABFC3B)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D42F32)
+I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x60354E20)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D42F32)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D42F32)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D42F32)
+I (D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D42F32)
+I (Include\system_stm32f4xx.h)(0x6AABFC3A)
+I (Headers\rcc_conf.h)(0x6ABF5DF8)
+I (Headers\delay.h)(0x6ABF5FB6)
+I (Headers\led.h)(0x6ABF630D)
+I (Headers\button.h)(0x6ABF64FD)
+F (.\Headers\delay.h)(0x6ABF5FB6)()
+F (.\Headers\main.h)(0x6AC69DD7)()
+F (.\Headers\rcc_conf.h)(0x6ABF5DF8)()
+F (.\Headers\led.h)(0x6ABF630D)()
+F (.\Headers\button.h)(0x6ABF64FD)()
+F (.\Headers\potent.h)(0x6AC69DF4)()
