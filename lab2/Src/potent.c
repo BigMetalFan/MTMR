@@ -1,6 +1,6 @@
 #include "potent.h"
 
-volatile uint16_t adcValie;
+volatile uint16_t adcValue;
 
 void initMeasure(uint32_t clockPeriod){
     RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
@@ -9,7 +9,7 @@ void initMeasure(uint32_t clockPeriod){
     
     GPIOA->MODER |= 3<<GPIO_MODER_MODE1_Pos;
     
-    TIM3->PSC = clockPeriod/10000000-1;
+    TIM3->PSC = clockPeriod/1000000-1;
     TIM3->ARR = 1000-1;
     TIM3->CR2 |= 2<<TIM_CR2_MMS_Pos;
     
@@ -33,8 +33,14 @@ void initMeasure(uint32_t clockPeriod){
 void ADC_IRQHandler(){
     if(ADC1->SR & ADC_SR_EOC){
         ADC1->SR &= ~ADC_SR_EOC;
-        adcValie = ADC1->DR;
-        TIM11->CCR1 = ADC1->DR;
+        if(ADC1->DR<20){
+            adcValue = 0;
+            TIM11->CCR1 = 0;
+        }
+        else{
+            adcValue = ADC1->DR;
+            TIM11->CCR1 = ADC1->DR;
+        }
     }
 }
 

@@ -22,20 +22,38 @@ Dialog DLL:      TCM.DLL V1.53.0.0
  
 <h2>Project:</h2>
 D:\keilProj\labsMTMR\lab2\lab1.uvprojx
-Project File Date:  10/02/2026
+Project File Date:  10/08/2026
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.16', folder: 'D:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
 compiling potent.c...
-compiling delay.c...
-compiling main.c...
-compiling rcc_conf.c...
-compiling button.c...
+Src/led.c(5): warning: initializing 'uint32_t *' (aka 'unsigned int *') with an expression of type 'volatile uint32_t *' (aka 'volatile unsigned int *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+ledPin_t pinsArray[] = {{&GPIOA->ODR, 4},
+                         ^~~~~~~~~~~
+Src/led.c(6): warning: initializing 'uint32_t *' (aka 'unsigned int *') with an expression of type 'volatile uint32_t *' (aka 'volatile unsigned int *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                        {&GPIOA->ODR, 8},
+                         ^~~~~~~~~~~
+Src/led.c(7): warning: initializing 'uint32_t *' (aka 'unsigned int *') with an expression of type 'volatile uint32_t *' (aka 'volatile unsigned int *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                        {&GPIOA->ODR, 16},
+                         ^~~~~~~~~~~
+Src/led.c(8): warning: initializing 'uint32_t *' (aka 'unsigned int *') with an expression of type 'volatile uint32_t *' (aka 'volatile unsigned int *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                        {&GPIOA->ODR, 32},
+                         ^~~~~~~~~~~
+Src/led.c(9): warning: initializing 'uint32_t *' (aka 'unsigned int *') with an expression of type 'volatile uint32_t *' (aka 'volatile unsigned int *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                        {&GPIOA->ODR, 64},
+                         ^~~~~~~~~~~
+Src/led.c(10): warning: initializing 'uint32_t *' (aka 'unsigned int *') with an expression of type 'volatile uint32_t *' (aka 'volatile unsigned int *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                        {&GPIOA->ODR, 128},
+                         ^~~~~~~~~~~
+Src/led.c(11): warning: initializing 'uint32_t *' (aka 'unsigned int *') with an expression of type 'volatile uint32_t *' (aka 'volatile unsigned int *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                        {&GPIOB->ODR, 1}};
+                         ^~~~~~~~~~~
+7 warnings generated.
 compiling led.c...
 linking...
-Program Size: Code=1588 RO-data=436 RW-data=16 ZI-data=1648  
-".\Objects\lab1.axf" - 0 Error(s), 0 Warning(s).
+Program Size: Code=1624 RO-data=436 RW-data=56 ZI-data=1648  
+".\Objects\lab1.axf" - 0 Error(s), 7 Warning(s).
 
 <h2>Software Packages used:</h2>
 

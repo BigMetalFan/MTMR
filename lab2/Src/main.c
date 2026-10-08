@@ -15,6 +15,7 @@ int main(void)
     buttonInit(clockPeriod);
     initMeasure(clockPeriod);
     initPwm(clockPeriod);
+    startMeasure();
 
 	for(;;){
         customDelay(100);
