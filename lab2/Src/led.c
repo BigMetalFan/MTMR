@@ -2,6 +2,7 @@
 
 volatile uint8_t pinNumber = 0;
 //uint16_t pinsArray[] = {4,8,16,32,64,128,1};
+/*
 ledPin_t pinsArray[] = {{&GPIOA->ODR, 4},
                         {&GPIOA->ODR, 8},
                         {&GPIOA->ODR, 16},
@@ -9,14 +10,20 @@ ledPin_t pinsArray[] = {{&GPIOA->ODR, 4},
                         {&GPIOA->ODR, 64},
                         {&GPIOA->ODR, 128},
                         {&GPIOB->ODR, 1}};
+                        */
+
+ledPin_t pinsArray[] = {{&GPIOA->ODR, 1<<GPIO_ODR_OD6_Pos},
+                        {&GPIOA->ODR, 1<<GPIO_ODR_OD7_Pos},
+                        {&GPIOB->ODR, 1<<GPIO_ODR_OD0_Pos}};
 
 void ledInit(){
 
 	RCC->AHB1ENR |= 1 << RCC_AHB1ENR_GPIOAEN_Pos;
 	RCC->AHB1ENR |= 1 << RCC_AHB1ENR_GPIOBEN_Pos;
     
-	GPIOA->MODER |= (1<<GPIO_MODER_MODE2_Pos) | (1<<GPIO_MODER_MODE3_Pos)| (1<<GPIO_MODER_MODE4_Pos) |
-		 (1<<GPIO_MODER_MODE5_Pos) |  (1<<GPIO_MODER_MODE6_Pos)|  (1<<GPIO_MODER_MODE7_Pos);
+	//GPIOA->MODER |= (1<<GPIO_MODER_MODE2_Pos) | (1<<GPIO_MODER_MODE3_Pos)| (1<<GPIO_MODER_MODE4_Pos) |
+	//	 (1<<GPIO_MODER_MODE5_Pos) |  (1<<GPIO_MODER_MODE6_Pos)|  (1<<GPIO_MODER_MODE7_Pos);
+    GPIOA->MODER |= (1<<GPIO_MODER_MODE6_Pos) | (1<<GPIO_MODER_MODE7_Pos);
 	GPIOB->MODER |= (1<<GPIO_MODER_MODE0_Pos);
 }
 

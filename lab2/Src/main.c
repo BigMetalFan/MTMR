@@ -1,10 +1,11 @@
 #include <stdint.h>
 #include "main.h"
-
+#include "stdio.h"
 
 uint32_t clockPeriod = 0;
 
-volatile uint16_t pwmVal = 0;
+extern volatile uint16_t adcValue;
+
 
 int main(void)
 {
@@ -16,8 +17,14 @@ int main(void)
     initMeasure(clockPeriod);
     initPwm(clockPeriod);
     startMeasure();
+    communicationInit(clockPeriod);
 
 	for(;;){
-        customDelay(100);
+        customDelay(1000);
+        char sendData[255];
+        
+        sprintf(sendData, "data: %d\n",adcValue);
+        
+        sendStr((uint8_t*)sendData);
 	}
 }

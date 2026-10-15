@@ -7,6 +7,7 @@
 #include "led.h"
 #include "button.h"
 #include "potent.h"
+#include "uartCommunication.h"
 
 #define USER_SOURCE ON_HSE
 

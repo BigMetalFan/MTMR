@@ -41,7 +41,7 @@ void TIM1_UP_TIM10_IRQHandler(){
         TIM10->SR &= ~TIM_SR_UIF;
         EXTI->IMR |= EXTI_IMR_IM12;
         if((GPIOB->IDR & GPIO_IDR_ID12_Msk) == 0){
-            pinNumber = pinNumber > 5 ? 0: pinNumber+1;
+            pinNumber = pinNumber > 1 ? 0: pinNumber+1;
         }
     }
 }
