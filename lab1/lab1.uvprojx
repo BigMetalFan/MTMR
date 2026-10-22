@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F401xC</Define>
               <Undefine></Undefine>
-              <IncludePath>Include/;Src/</IncludePath>
+              <IncludePath>Include/;Src/;Headers/</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -424,9 +424,24 @@
               <FilePath>.\Src\main.c</FilePath>
             </File>
             <File>
-              <FileName>main.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Src\main.h</FilePath>
+              <FileName>rcc_conf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\rcc_conf.c</FilePath>
+            </File>
+            <File>
+              <FileName>delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\led.c</FilePath>
+            </File>
+            <File>
+              <FileName>button.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\button.c</FilePath>
             </File>
           </Files>
         </Group>
