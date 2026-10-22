@@ -13,7 +13,7 @@ void initMeasure(uint32_t clockPeriod){
     GPIOA->MODER |= 3<<GPIO_MODER_MODE1_Pos|3<<GPIO_MODER_MODE0_Pos;
     
     TIM3->PSC = clockPeriod/1000000-1;
-    TIM3->ARR = 1000-1;
+    TIM3->ARR = 5000-1;
     TIM3->CR2 |= 2<<TIM_CR2_MMS_Pos;
     
     
@@ -27,11 +27,11 @@ void initMeasure(uint32_t clockPeriod){
     ADC1->SQR1 = 1 << ADC_SQR1_L_Pos;
     ADC1->SQR3 = (1 << ADC_SQR3_SQ1_Pos)|(0 << ADC_SQR3_SQ2_Pos);
     ADC1->SMPR2 |= 4<<ADC_SMPR2_SMP1_Pos;
+    ADC1->SMPR2 |= 4<<ADC_SMPR2_SMP0_Pos;
     
     ADC1->CR1 &= ~ADC_CR1_RES;
     ADC1->CR2 &= ~ADC_CR2_ALIGN;
     
-    ADC1->CR2 |= ADC_CR2_ADON;
     
     DMA2_Stream0->CR =  (1<<DMA_SxCR_MSIZE_Pos)
                         |(1<<DMA_SxCR_PSIZE_Pos)
@@ -42,6 +42,7 @@ void initMeasure(uint32_t clockPeriod){
     DMA2_Stream0->M0AR = (uint32_t)valArray;
     DMA2_Stream0->NDTR = 2;
     DMA2_Stream0->CR |= DMA_SxCR_EN;
+    ADC1->CR2 |= ADC_CR2_ADON;
     NVIC_EnableIRQ(DMA2_Stream0_IRQn);
 }
 

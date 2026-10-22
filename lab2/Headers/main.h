@@ -9,6 +9,6 @@
 #include "potent.h"
 #include "uartCommunication.h"
 
-#define USER_SOURCE ON_HSE
+#define USER_SOURCE ON_HSI
 
 #endif
