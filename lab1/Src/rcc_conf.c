@@ -2,18 +2,20 @@
 
 uint32_t initRcc(uint8_t mode){
     
-    if(mode == 0){ //HSI
-        return 16000000;
+    uint32_t freq = 0;
+    
+    if(mode == ON_HSI){ //HSI
+        freq = 16000000;
     }
-    if(mode == 1){  //HSE
+    if(mode == ON_HSE){  //HSE
         RCC->CR |= 1<<RCC_CR_HSEON_Pos;
         while(!(RCC->CR & (1<<RCC_CR_HSERDY_Pos))){
         }
         RCC->CFGR |= RCC_CFGR_SW_HSE;
-        return 25000000;
+        freq = 25000000;
     }
     
-    if(mode == 2){  //PLL
+    if(mode == ON_PLL){  //PLL
         RCC->CR |= 1<<RCC_CR_HSEON_Pos;
         while(!(RCC->CR & (1<<RCC_CR_HSERDY_Pos))){
         }
@@ -26,9 +28,9 @@ uint32_t initRcc(uint8_t mode){
 
         while ((FLASH->ACR & FLASH_ACR_LATENCY) != FLASH_ACR_LATENCY_1WS);
         
-        return 35000000;
+        freq = 35000000;
     }
     
-    return -1;
+    return freq;
 
 }
