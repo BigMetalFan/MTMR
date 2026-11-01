@@ -8,7 +8,7 @@ volatile float tempData = 0;
 float filterK = 0.1;
 
 
-void initMeasure(uint32_t clockPeriod){
+void initMeasure(uint32_t clockFreq){
     RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
     RCC->APB2ENR |= RCC_APB2ENR_ADC1EN;
     RCC->APB1ENR |= RCC_APB1ENR_TIM3EN;
@@ -16,7 +16,7 @@ void initMeasure(uint32_t clockPeriod){
     
     GPIOA->MODER |= 3<<GPIO_MODER_MODE1_Pos|3<<GPIO_MODER_MODE0_Pos;
     
-    TIM3->PSC = clockPeriod/1000000-1;
+    TIM3->PSC = clockFreq/1000000-1;
     TIM3->ARR = 1000-1;
     TIM3->CR2 |= 2<<TIM_CR2_MMS_Pos;
     

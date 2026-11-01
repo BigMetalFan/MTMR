@@ -3,6 +3,7 @@
 
 #include "main.h"
 
-void buttonInit(uint32_t clockPeriod);
+extern volatile uint8_t selected;
+void buttonInit(uint32_t clockFreq);
     
 #endif

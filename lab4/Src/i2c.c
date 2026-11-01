@@ -1,6 +1,7 @@
 #include "i2c.h"
 
-void i2cInit(uint32_t clockPeriod){
+
+void i2cInit(uint32_t clockFreq){
     RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN | RCC_AHB1ENR_GPIOBEN;
     RCC->APB1ENR |= RCC_APB1ENR_I2C3EN;
     
@@ -17,9 +18,9 @@ void i2cInit(uint32_t clockPeriod){
     GPIOB->AFR[0] &= ~(0xFU << GPIO_AFRL_AFSEL4_Pos);
     GPIOB->AFR[0] |=  (9U   << GPIO_AFRL_AFSEL4_Pos);
     
-    I2C3->CR2 |= (clockPeriod/1000000)<<I2C_CR2_FREQ_Pos;
-    I2C3->CCR = clockPeriod/(2*100000);
-    I2C3->TRISE = (clockPeriod/1000000+1)&I2C_TRISE_TRISE;
+    I2C3->CR2 |= (clockFreq/1000000)<<I2C_CR2_FREQ_Pos;
+    I2C3->CCR = clockFreq/(2*100000);
+    I2C3->TRISE = (clockFreq/1000000+1)&I2C_TRISE_TRISE;
     I2C3->CR1 |= I2C_CR1_PE;
 }
 

@@ -11,10 +11,10 @@ uint16_t paArray[] = {0,128,64,32,16,8,4};
 int main(void)
 {
 	
-    uint32_t clockPeriod = initRcc(USER_SOURCE);
-    sysTickInit(clockPeriod);
+    uint32_t clockFreq = initRcc(USER_SOURCE);
+    sysTickInit(clockFreq);
     ledInit();
-    buttonInit(clockPeriod);
+    buttonInit(clockFreq);
 
 	for(;;){
         

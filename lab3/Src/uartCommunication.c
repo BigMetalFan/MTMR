@@ -1,6 +1,6 @@
 #include "uartCommunication.h"
 
-void communicationInit(uint32_t clockPeriod){
+void communicationInit(uint32_t clockFreq){
     RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
     RCC->APB1ENR |= RCC_APB1ENR_USART2EN;
     
@@ -9,7 +9,7 @@ void communicationInit(uint32_t clockPeriod){
     GPIOA->AFR[0] |= (7 << GPIO_AFRL_AFSEL2_Pos)|(7 << GPIO_AFRL_AFSEL3_Pos);
     
     USART2->CR1 |= USART_CR1_UE | USART_CR1_TE;
-    USART2->BRR = clockPeriod/115200;
+    USART2->BRR = clockFreq/115200;
     
 }
 

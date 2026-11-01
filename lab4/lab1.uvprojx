@@ -444,16 +444,6 @@
               <FilePath>.\Src\button.c</FilePath>
             </File>
             <File>
-              <FileName>potent.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Src\potent.c</FilePath>
-            </File>
-            <File>
-              <FileName>uartCommunication.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Src\uartCommunication.c</FilePath>
-            </File>
-            <File>
               <FileName>font5x7.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Src\font5x7.c</FilePath>
@@ -467,6 +457,11 @@
               <FileName>i2c.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Src\i2c.c</FilePath>
+            </File>
+            <File>
+              <FileName>encoder.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\encoder.c</FilePath>
             </File>
           </Files>
         </Group>

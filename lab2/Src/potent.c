@@ -4,7 +4,7 @@ volatile uint16_t adcValue;
 
 volatile uint16_t valArray[2] = {0};
 
-void initMeasure(uint32_t clockPeriod){
+void initMeasure(uint32_t clockFreq){
     RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
     RCC->APB2ENR |= RCC_APB2ENR_ADC1EN;
     RCC->APB1ENR |= RCC_APB1ENR_TIM3EN;
@@ -12,7 +12,7 @@ void initMeasure(uint32_t clockPeriod){
     
     GPIOA->MODER |= 3<<GPIO_MODER_MODE1_Pos|3<<GPIO_MODER_MODE0_Pos;
     
-    TIM3->PSC = clockPeriod/1000000-1;
+    TIM3->PSC = clockFreq/1000000-1;
     TIM3->ARR = 5000-1;
     TIM3->CR2 |= 2<<TIM_CR2_MMS_Pos;
     

@@ -7,6 +7,6 @@
   D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h \
   D:\Users\Shash\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h \
   Include\system_stm32f4xx.h Headers\rcc_conf.h Headers\main.h \
-  Headers\delay.h Headers\led.h Headers\button.h Headers\potent.h \
-  Headers\uartCommunication.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h
+  Headers\delay.h Headers\led.h Headers\button.h Headers\i2c.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h Headers\ssd1306.h \
+  Headers\font5x7.h D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h

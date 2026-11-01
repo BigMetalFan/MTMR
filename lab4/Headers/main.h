@@ -6,8 +6,7 @@
 #include "delay.h"
 #include "led.h"
 #include "button.h"
-#include "potent.h"
-#include "uartCommunication.h"
+#include "i2c.h"
 
 #define USER_SOURCE ON_HSE
 

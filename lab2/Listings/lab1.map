@@ -24,7 +24,7 @@ Section Cross References
     system_stm32f4xx.o(.text.SystemCoreClockUpdate) refers to system_stm32f4xx.o(.rodata.AHBPrescTable) for AHBPrescTable
     system_stm32f4xx.o(.ARM.exidx.text.SystemCoreClockUpdate) refers to system_stm32f4xx.o(.text.SystemCoreClockUpdate) for [Anonymous Symbol]
     main.o(.text.main) refers to rcc_conf.o(.text.initRcc) for initRcc
-    main.o(.text.main) refers to main.o(.bss.clockPeriod) for clockPeriod
+    main.o(.text.main) refers to main.o(.bss.clockFreq) for clockFreq
     main.o(.text.main) refers to delay.o(.text.sysTickInit) for sysTickInit
     main.o(.text.main) refers to led.o(.text.ledInit) for ledInit
     main.o(.text.main) refers to button.o(.text.buttonInit) for buttonInit
@@ -1038,7 +1038,7 @@ Image Symbol Table
     __libspace_start                         0x20000018   Data          96  libspace.o(.bss)
     __temporary_stack_top$libspace           0x20000078   Data           0  libspace.o(.bss)
     adcValue                                 0x20000078   Data           2  potent.o(.bss.adcValue)
-    clockPeriod                              0x2000007c   Data           4  main.o(.bss.clockPeriod)
+    clockFreq                                0x2000007c   Data           4  main.o(.bss.clockFreq)
     pinNumber                                0x20000080   Data           1  led.o(.bss.pinNumber)
     valArray                                 0x20000082   Data           4  potent.o(.bss.valArray)
 
@@ -1240,7 +1240,7 @@ Memory Map of the image
     0x20000018        -       0x00000060   Zero   RW          322    .bss                c_w.l(libspace.o)
     0x20000078        -       0x00000002   Zero   RW          102    .bss.adcValue       potent.o
     0x2000007a   0x08002760   0x00000002   PAD
-    0x2000007c        -       0x00000004   Zero   RW           27    .bss.clockPeriod    main.o
+    0x2000007c        -       0x00000004   Zero   RW           27    .bss.clockFreq      main.o
     0x20000080        -       0x00000001   Zero   RW           67    .bss.pinNumber      led.o
     0x20000081   0x08002760   0x00000001   PAD
     0x20000082        -       0x00000004   Zero   RW          101    .bss.valArray       potent.o
@@ -1256,18 +1256,18 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       480          0          0          0          0       4666   button.o
-       164          0          0          0          0       1125   delay.o
-       366          0          0         24          1       4558   led.o
+       480          0          0          0          0       4664   button.o
+       164          0          0          0          0       1123   delay.o
+       366          0          0         24          1       4554   led.o
        120          0         22          0          4        750   main.o
-       530          0          0          0          6       5166   potent.o
+       530          0          0          0          6       5164   potent.o
        264          0          0          0          0       1709   rcc_conf.o
         64         26        404          0       1536        804   startup_stm32f401xc.o
         18          0          0          0          0       2506   system_stm32f4xx.o
-       214          0          0          0          0       2372   uartcommunication.o
+       214          0          0          0          0       2370   uartcommunication.o
 
     ----------------------------------------------------------------------
-      2238         26        460         24       1552      23656   Object Totals
+      2238         26        460         24       1552      23644   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         18          0          2          0          5          0   (incl. Padding)
 
@@ -1376,8 +1376,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      9044        292       1012         24       1648      25612   Grand Totals
-      9044        292       1012         24       1648      25612   ELF Image Totals
+      9044        292       1012         24       1648      25600   Grand Totals
+      9044        292       1012         24       1648      25600   ELF Image Totals
       9044        292       1012         24          0          0   ROM Totals
 
 ==============================================================================

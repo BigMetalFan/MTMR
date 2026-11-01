@@ -4,6 +4,6 @@
 #include "main.h"
 
 void customDelay(uint16_t delay);
-void sysTickInit(uint32_t clockPeriod);
+void sysTickInit(uint32_t clockFreq);
 
 #endif

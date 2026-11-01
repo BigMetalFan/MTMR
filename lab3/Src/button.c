@@ -2,7 +2,7 @@
 
 extern volatile uint8_t pinNumber;
 
-void buttonInit(uint32_t clockPeriod){
+void buttonInit(uint32_t clockFreq){
     GPIOB->MODER &= ~GPIO_MODER_MODE12_Msk;
     RCC->APB2ENR |= RCC_APB2ENR_SYSCFGEN;
 
@@ -17,7 +17,7 @@ void buttonInit(uint32_t clockPeriod){
     TIM10->CR1 |= TIM_CR1_OPM_Msk;
     TIM10->DIER |= TIM_DIER_UIE_Msk;
     
-    TIM10->PSC = clockPeriod/10000-1;
+    TIM10->PSC = clockFreq/10000-1;
     TIM10->ARR = 200-1;
     
     NVIC_EnableIRQ(EXTI15_10_IRQn);

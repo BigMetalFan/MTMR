@@ -1,10 +1,10 @@
 #include "delay.h"
 
 
-void sysTickInit(uint32_t clockPeriod){
+void sysTickInit(uint32_t clockFreq){
 	SysTick->CTRL |= 1 << SysTick_CTRL_CLKSOURCE_Pos;
 	SysTick->CTRL |= 1 << SysTick_CTRL_TICKINT_Pos;
-    SysTick->LOAD |= ((clockPeriod/1000)&SysTick_LOAD_RELOAD_Msk) << SysTick_LOAD_RELOAD_Pos;
+    SysTick->LOAD |= ((clockFreq/1000)&SysTick_LOAD_RELOAD_Msk) << SysTick_LOAD_RELOAD_Pos;
 }
 
 void SysTick_Handler(){

@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\lab1.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\lab1.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Thu Oct 22 18:40:40 2026
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Sun Nov  1 20:04:56 2026
 <BR><P>
 <H3>Maximum Stack Usage =        432 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -52,7 +52,7 @@ Function Pointers
  <LI><a href="#[3c]">DMA2_Stream7_IRQHandler</a> from startup_stm32f401xc.o(.text) referenced from startup_stm32f401xc.o(RESET)
  <LI><a href="#[7]">DebugMon_Handler</a> from startup_stm32f401xc.o(.text) referenced from startup_stm32f401xc.o(RESET)
  <LI><a href="#[10]">EXTI0_IRQHandler</a> from startup_stm32f401xc.o(.text) referenced from startup_stm32f401xc.o(RESET)
- <LI><a href="#[2d]">EXTI15_10_IRQHandler</a> from button.o(.text.EXTI15_10_IRQHandler) referenced from startup_stm32f401xc.o(RESET)
+ <LI><a href="#[2d]">EXTI15_10_IRQHandler</a> from startup_stm32f401xc.o(.text) referenced from startup_stm32f401xc.o(RESET)
  <LI><a href="#[11]">EXTI1_IRQHandler</a> from startup_stm32f401xc.o(.text) referenced from startup_stm32f401xc.o(RESET)
  <LI><a href="#[12]">EXTI2_IRQHandler</a> from startup_stm32f401xc.o(.text) referenced from startup_stm32f401xc.o(RESET)
  <LI><a href="#[13]">EXTI3_IRQHandler</a> from startup_stm32f401xc.o(.text) referenced from startup_stm32f401xc.o(RESET)
@@ -89,7 +89,7 @@ Function Pointers
  <LI><a href="#[1e]">TIM1_BRK_TIM9_IRQHandler</a> from startup_stm32f401xc.o(.text) referenced from startup_stm32f401xc.o(RESET)
  <LI><a href="#[21]">TIM1_CC_IRQHandler</a> from startup_stm32f401xc.o(.text) referenced from startup_stm32f401xc.o(RESET)
  <LI><a href="#[20]">TIM1_TRG_COM_TIM11_IRQHandler</a> from led.o(.text.TIM1_TRG_COM_TIM11_IRQHandler) referenced from startup_stm32f401xc.o(RESET)
- <LI><a href="#[1f]">TIM1_UP_TIM10_IRQHandler</a> from button.o(.text.TIM1_UP_TIM10_IRQHandler) referenced from startup_stm32f401xc.o(RESET)
+ <LI><a href="#[1f]">TIM1_UP_TIM10_IRQHandler</a> from startup_stm32f401xc.o(.text) referenced from startup_stm32f401xc.o(RESET)
  <LI><a href="#[22]">TIM2_IRQHandler</a> from startup_stm32f401xc.o(.text) referenced from startup_stm32f401xc.o(RESET)
  <LI><a href="#[23]">TIM3_IRQHandler</a> from startup_stm32f401xc.o(.text) referenced from startup_stm32f401xc.o(RESET)
  <LI><a href="#[24]">TIM4_IRQHandler</a> from startup_stm32f401xc.o(.text) referenced from startup_stm32f401xc.o(RESET)
@@ -523,6 +523,9 @@ Global Symbols
 <P><STRONG><a name="[10]"></a>EXTI0_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f401xc.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xc.o(RESET)
 </UL>
+<P><STRONG><a name="[2d]"></a>EXTI15_10_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f401xc.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xc.o(RESET)
+</UL>
 <P><STRONG><a name="[11]"></a>EXTI1_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f401xc.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xc.o(RESET)
 </UL>
@@ -602,6 +605,9 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xc.o(RESET)
 </UL>
 <P><STRONG><a name="[21]"></a>TIM1_CC_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f401xc.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xc.o(RESET)
+</UL>
+<P><STRONG><a name="[1f]"></a>TIM1_UP_TIM10_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f401xc.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xc.o(RESET)
 </UL>
 <P><STRONG><a name="[22]"></a>TIM2_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f401xc.o(.text))
@@ -1001,9 +1007,6 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xc.o(RESET)
 </UL>
-<P><STRONG><a name="[2d]"></a>EXTI15_10_IRQHandler</STRONG> (Thumb, 96 bytes, Stack size 0 bytes, button.o(.text.EXTI15_10_IRQHandler))
-<BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xc.o(RESET)
-</UL>
 <P><STRONG><a name="[9]"></a>SysTick_Handler</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, delay.o(.text.SysTick_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xc.o(RESET)
 </UL>
@@ -1011,11 +1014,6 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xc.o(.text)
 </UL>
 <P><STRONG><a name="[20]"></a>TIM1_TRG_COM_TIM11_IRQHandler</STRONG> (Thumb, 144 bytes, Stack size 0 bytes, led.o(.text.TIM1_TRG_COM_TIM11_IRQHandler))
-<BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xc.o(RESET)
-</UL>
-<P><STRONG><a name="[1f]"></a>TIM1_UP_TIM10_IRQHandler</STRONG> (Thumb, 126 bytes, Stack size 4 bytes, button.o(.text.TIM1_UP_TIM10_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = TIM1_UP_TIM10_IRQHandler
-</UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xc.o(RESET)
 </UL>
 <P><STRONG><a name="[ac]"></a>communicationInit</STRONG> (Thumb, 112 bytes, Stack size 4 bytes, uartcommunication.o(.text.communicationInit))

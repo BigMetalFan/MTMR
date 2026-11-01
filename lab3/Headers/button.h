@@ -3,6 +3,6 @@
 
 #include "main.h"
 
-void buttonInit(uint32_t clockPeriod);
+void buttonInit(uint32_t clockFreq);
     
 #endif

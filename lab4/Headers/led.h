@@ -4,7 +4,7 @@
 #include "main.h"
 
 void ledInit();
-void initPwm(uint32_t clockPeriod);
+void initPwm(uint32_t clockFreq);
 
 typedef struct{
     uint32_t* port;

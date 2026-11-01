@@ -27,11 +27,11 @@ void ledInit(){
 	GPIOB->MODER |= (1<<GPIO_MODER_MODE0_Pos);
 }
 
-void initPwm(uint32_t clockPeriod){
+void initPwm(uint32_t clockFreq){
     RCC->APB2ENR |= 1 << RCC_APB2ENR_TIM11EN_Pos;
     TIM11->DIER |= TIM_DIER_UIE_Msk;
     TIM11->DIER |= TIM_DIER_CC1IE_Msk;
-    TIM11->PSC = clockPeriod/1000000-1;
+    TIM11->PSC = clockFreq/1000000-1;
     TIM11->ARR = 4096-1;
     TIM11->CR1 |= TIM_CR1_CEN;
     //TIM11->OC

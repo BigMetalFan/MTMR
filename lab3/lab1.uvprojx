@@ -439,11 +439,6 @@
               <FilePath>.\Src\led.c</FilePath>
             </File>
             <File>
-              <FileName>button.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Src\button.c</FilePath>
-            </File>
-            <File>
               <FileName>potent.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Src\potent.c</FilePath>

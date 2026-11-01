@@ -3,7 +3,7 @@
 
 #include "main.h"
 
-void initMeasure(uint32_t clockPeriod);
+void initMeasure(uint32_t clockFreq);
 void startMeasure();
 void stopMeasure();
 

@@ -5,7 +5,6 @@
 ".\objects\rcc_conf.o"
 ".\objects\delay.o"
 ".\objects\led.o"
-".\objects\button.o"
 ".\objects\potent.o"
 ".\objects\uartcommunication.o"
 --strict --scatter ".\Objects\lab1.sct"

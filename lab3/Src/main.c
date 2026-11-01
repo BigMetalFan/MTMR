@@ -2,22 +2,18 @@
 #include "main.h"
 #include "stdio.h"
 
-uint32_t clockPeriod = 0;
+uint32_t clockFreq = 0;
 
-//extern volatile uint16_t adcValue;
 extern volatile uint16_t valArray[2];
 extern volatile float tempData;
 int main(void)
 {
 	
-    clockPeriod = initRcc(USER_SOURCE);
-    sysTickInit(clockPeriod);
-    //ledInit();
-    //buttonInit(clockPeriod);
-    initMeasure(clockPeriod);
-    //initPwm(clockPeriod);
+    clockFreq = initRcc(USER_SOURCE);
+    sysTickInit(clockFreq);
+    initMeasure(clockFreq);
     startMeasure();
-    communicationInit(clockPeriod);
+    communicationInit(clockFreq);
 
 	for(;;){
         customDelay(1000);
