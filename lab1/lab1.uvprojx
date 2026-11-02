@@ -446,6 +446,36 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Headers</GroupName>
+          <Files>
+            <File>
+              <FileName>button.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Headers\button.h</FilePath>
+            </File>
+            <File>
+              <FileName>delay.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Headers\delay.h</FilePath>
+            </File>
+            <File>
+              <FileName>led.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Headers\led.h</FilePath>
+            </File>
+            <File>
+              <FileName>main.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Headers\main.h</FilePath>
+            </File>
+            <File>
+              <FileName>rcc_conf.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Headers\rcc_conf.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>

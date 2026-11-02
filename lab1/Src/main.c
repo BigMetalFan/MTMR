@@ -1,8 +1,6 @@
 #include <stdint.h>
 #include "main.h"
 
-
-
 extern volatile uint8_t dir;
 
 uint16_t pbArray[] = {1,0,0,0,0,0,0};

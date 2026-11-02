@@ -1,6 +1,5 @@
 #include "delay.h"
 
-
 void sysTickInit(uint32_t clockFreq){
 	SysTick->CTRL |= 1 << SysTick_CTRL_CLKSOURCE_Pos;
 	SysTick->CTRL |= 1 << SysTick_CTRL_TICKINT_Pos;
