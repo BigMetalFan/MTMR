@@ -185,6 +185,11 @@
           <WinNumber>1</WinNumber>
           <ItemText>selected</ItemText>
         </Ww>
+        <Ww>
+          <count>7</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>ledBright,0x0A</ItemText>
+        </Ww>
       </WatchWindow1>
       <MemoryWindow1>
         <Mm>
@@ -244,6 +249,22 @@
         <Entry>
           <Name>System Viewer\DMA2</Name>
           <WinId>35903</WinId>
+        </Entry>
+        <Entry>
+          <Name>System Viewer\GPIOA</Name>
+          <WinId>35900</WinId>
+        </Entry>
+        <Entry>
+          <Name>System Viewer\GPIOB</Name>
+          <WinId>35901</WinId>
+        </Entry>
+        <Entry>
+          <Name>System Viewer\I2C3</Name>
+          <WinId>35897</WinId>
+        </Entry>
+        <Entry>
+          <Name>System Viewer\TIM2</Name>
+          <WinId>35896</WinId>
         </Entry>
         <Entry>
           <Name>System Viewer\TIM3</Name>

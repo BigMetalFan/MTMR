@@ -1,42 +1,57 @@
 #include "led.h"
 
-volatile uint8_t pinNumber = 0;
-
 void ledInit(){
 
-	RCC->AHB1ENR |= 1 << RCC_AHB1ENR_GPIOAEN_Pos;
 	RCC->AHB1ENR |= 1 << RCC_AHB1ENR_GPIOBEN_Pos;
     
-    GPIOA->MODER |= (1<<GPIO_MODER_MODE6_Pos) | (1<<GPIO_MODER_MODE7_Pos);
-	GPIOB->MODER |= (1<<GPIO_MODER_MODE0_Pos);
+	GPIOB->MODER |= (1<<GPIO_MODER_MODE1_Pos) | (1<<GPIO_MODER_MODE2_Pos) | (1<<GPIO_MODER_MODE10_Pos);
 }
 
 void initPwm(uint32_t clockFreq){
-    RCC->APB2ENR |= 1 << RCC_APB2ENR_TIM11EN_Pos;
-    TIM11->DIER |= TIM_DIER_UIE_Msk;
-    TIM11->DIER |= TIM_DIER_CC1IE_Msk;
-    TIM11->PSC = clockFreq/1000000-1;
-    TIM11->ARR = 4096-1;
-    TIM11->CR1 |= TIM_CR1_CEN;
-    //TIM11->OC
-    NVIC_EnableIRQ(TIM1_TRG_COM_TIM11_IRQn);
+    RCC->APB1ENR |= 1 << RCC_APB1ENR_TIM2EN_Pos;
+    TIM2->DIER |= TIM_DIER_UIE_Msk;
+    TIM2->DIER |= TIM_DIER_CC1IE_Msk |TIM_DIER_CC2IE_Msk |TIM_DIER_CC3IE_Msk;
+    TIM2->PSC = clockFreq/100000-1;
+    TIM2->ARR = 100;
+    TIM2->CR1 |= TIM_CR1_CEN;
+    NVIC_EnableIRQ(TIM2_IRQn);
     
 }
 
 
-void TIM1_TRG_COM_TIM11_IRQHandler(){
-    if(TIM11->SR & TIM_SR_UIF_Msk){
+void TIM2_IRQHandler(){
+    if(TIM2->SR & TIM_SR_UIF_Msk){
        
-        TIM11->SR &= ~TIM_SR_UIF;
-        if(TIM11->CCR1 != 0){
-            //*pinsArray[pinNumber].port |= pinsArray[pinNumber].pin;
+        TIM2->SR &= ~TIM_SR_UIF;
+        
+        TIM2->CCR1 = ledBright[0];
+        TIM2->CCR2 = ledBright[1];
+        TIM2->CCR3 = ledBright[2];
+
+        if(TIM2->CCR1 != 0){
+            GPIOB->BSRR = GPIO_BSRR_BS1;
+        }
+        if(TIM2->CCR2 != 0){
+            GPIOB->BSRR = GPIO_BSRR_BS2;
+        }
+        if(TIM2->CCR3 != 0){
+            GPIOB->BSRR = GPIO_BSRR_BS10;
         }
 
     }
-    if(TIM11->SR & TIM_SR_CC1IF_Msk){
+    if(TIM2->SR & TIM_SR_CC1IF_Msk){
        
-        TIM11->SR &= ~TIM_SR_CC1IF;
-        GPIOA->ODR = 0;
-        GPIOB->ODR = 0;
+        TIM2->SR &= ~TIM_SR_CC1IF;
+        GPIOB->BSRR = GPIO_BSRR_BR1;
+    }
+    if(TIM2->SR & TIM_SR_CC2IF_Msk){
+       
+        TIM2->SR &= ~TIM_SR_CC2IF;
+        GPIOB->BSRR = GPIO_BSRR_BR2;
+    }
+    if(TIM2->SR & TIM_SR_CC3IF_Msk){
+       
+        TIM2->SR &= ~TIM_SR_CC3IF;
+        GPIOB->BSRR = GPIO_BSRR_BR10;
     }
 }

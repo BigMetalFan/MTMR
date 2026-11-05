@@ -8,6 +8,6 @@
 #include "button.h"
 #include "i2c.h"
 
-#define USER_SOURCE ON_HSE
+#define USER_SOURCE ON_PLL
 
 #endif

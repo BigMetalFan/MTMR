@@ -12,7 +12,7 @@ void ssd1306SendData(uint8_t data) {
 
 void ssd1306Init(void) {
 
-	for (volatile uint32_t i = 0; i < 1000; i++)
+	for (volatile uint32_t i = 0; i < 10000; i++)
 		//__NOP(); // small pause
 
 	ssd1306SendCmd(0xAE); // display OFF (recommended)

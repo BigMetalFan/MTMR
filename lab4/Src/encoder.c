@@ -2,27 +2,33 @@
 
 //TIM4_CH2 - PB7
 //TIM4_CH3 - PB8
-
+/*
 void encoderInit(uint32_t clockFreq){
     
     RCC->APB1ENR |= 1 << RCC_APB1ENR_TIM4EN_Pos;
+
     
-    GPIOB->MODER |= (2<<GPIO_MODER_MODE7_Pos) | (2<<GPIO_MODER_MODE8_Pos);
-    GPIOA->AFR[0] &= ~(2<<GPIO_AFRL_AFSEL7_Pos);
-    GPIOA->AFR[0] |= 2<<GPIO_AFRL_AFSEL7_Pos;
-    GPIOA->AFR[1] &= ~(2<<GPIO_AFRH_AFSEL8_Pos);
-    GPIOA->AFR[1] |= 2<<GPIO_AFRH_AFSEL8_Pos;
+    GPIOB->MODER &= ~GPIO_MODER_MODE7_Msk;
+    GPIOB->MODER &= ~GPIO_MODER_MODE8_Msk;
+    RCC->APB2ENR |= RCC_APB2ENR_SYSCFGEN;
+
+    SYSCFG->EXTICR[1] &= ~SYSCFG_EXTICR2_EXTI7;
+    SYSCFG->EXTICR[1] |= SYSCFG_EXTICR2_EXTI7_PB;
+    SYSCFG->EXTICR[2] &= ~SYSCFG_EXTICR3_EXTI8;
+    SYSCFG->EXTICR[2] |= SYSCFG_EXTICR3_EXTI8_PB;
     
+    GPIOB->PUPDR |= (1<<GPIO_PUPDR_PUPD7_Pos) | (1<<GPIO_PUPDR_PUPD8_Pos);
+    EXTI->IMR |= EXTI_IMR_IM7 | EXTI_IMR_IM8;
+    EXTI->FTSR |= (1 << EXTI_FTSR_TR7_Pos) | (1 << EXTI_FTSR_TR8_Pos);
     
-    TIM4->PSC = clockFreq/1000000-1;
-    TIM4->ARR = 0xFFFF;
-    TIM4->CCER &= ~(1 << TIM_CCER_CC3P_Pos);
-    TIM4->CCER |= (1 << TIM_CCER_CC4P_Pos);
-    TIM4->CCER |= (1 << TIM_CCER_CC3E_Pos) | (1 << TIM_CCER_CC4E_Pos);
-    TIM4->CCMR2 &= ~((3 << TIM_CCMR2_CC3S_Pos) | (3 << TIM_CCMR2_CC4S_Pos));
-    TIM4->CCMR2 |= (1 << TIM_CCMR2_CC3S_Pos) | (2 << TIM_CCMR2_CC4S_Pos);
-    TIM4->DIER |= (1 << TIM_DIER_CC3IE_Pos) | (1 << TIM_DIER_CC4IE_Pos);
-    TIM4->CR1 |= (1 << TIM_CR1_CEN_Pos);
+    RCC->APB2ENR |= 1 << RCC_APB2ENR_TIM10EN_Pos;
+    
+    TIM4->CR1 |= TIM_CR1_OPM_Msk;
+    TIM4->DIER |= TIM_DIER_UIE_Msk;
+    
+    TIM4->PSC = clockFreq/10000-1;
+    TIM4->ARR = 200-1;
+    
     NVIC_EnableIRQ(TIM4_IRQn);
 }
-
+*/

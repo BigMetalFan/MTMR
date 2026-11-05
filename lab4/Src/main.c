@@ -13,32 +13,34 @@ uint8_t lastSelect = 0;
 
 int main(void)
 {
-    clockFreq = initRcc(USER_SOURCE);
-    i2cInit(clockFreq);
+    clockFreq = initRcc(ON_HSI);
     buttonInit(clockFreq);
+    encoderInit(clockFreq);
+    ledInit();
+    initPwm(clockFreq);
+    i2cInit(clockFreq);
     ssd1306Init();
     
 
-
 	for(;;){
     
-    
+//    memset(select,0,3);
+//    select[selected] = '+';
         
-    memset(select,0,3);
-    select[selected] = '+';
-        
-    for(int i = 0; i<3; i++){
-        sprintf(menuText[i], "%c: -- %c",itemNames[i],select[i]);
-        
-        
-    }
+//    for(int i = 0; i<3; i++){
+//        sprintf(menuText[i], "%c: %d %c",itemNames[i],ledBright[i],select[i]);
+//        
+//        
+//    }
+    /*
     if(selected != lastSelect){
+
+    }*/
         lastSelect = selected;
         ssd1306Clear();
         ssd1306DrawString(0, 0, "RGB Controller");
         ssd1306DrawString(2, 0, menuText[0]);
         ssd1306DrawString(3, 0, menuText[1]);
         ssd1306DrawString(4, 0, menuText[2]);
-    }
     }
 }
