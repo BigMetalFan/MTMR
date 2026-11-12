@@ -434,11 +434,6 @@
               <FilePath>.\Src\delay.c</FilePath>
             </File>
             <File>
-              <FileName>led.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Src\led.c</FilePath>
-            </File>
-            <File>
               <FileName>potent.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Src\potent.c</FilePath>
@@ -467,16 +462,6 @@
               <FileName>rcc_conf.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Headers\rcc_conf.h</FilePath>
-            </File>
-            <File>
-              <FileName>led.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Headers\led.h</FilePath>
-            </File>
-            <File>
-              <FileName>button.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Headers\button.h</FilePath>
             </File>
             <File>
               <FileName>potent.h</FileName>

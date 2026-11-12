@@ -1,4 +1,5 @@
 #include "ssd1306.h"
+#include "string.h"
 
 void ssd1306SendCmd(uint8_t cmd) {
 
@@ -8,6 +9,10 @@ void ssd1306SendCmd(uint8_t cmd) {
 void ssd1306SendData(uint8_t data) {
 
 	i2cWriteRegister(SSD1306_ADDR, SSD1306_DATA, &data, 1);
+}
+void ssd1306SendMultipleData(uint8_t* data, uint8_t dataSize) {
+
+	i2cWriteRegister(SSD1306_ADDR, SSD1306_DATA, data, dataSize);
 }
 
 void ssd1306Init(void) {
@@ -78,6 +83,39 @@ void ssd1306DrawChar(uint8_t page, uint8_t column, char c) {
 
 	ssd1306SetCursor(page, column + 5); // empty columns between symbols
 	ssd1306SendData(0x00);
+}
+
+void prepareChar(char c, char* position){
+    uint8_t index = (uint8_t) (c - 32);
+    for (uint8_t i = 0; i < 5; i++) {
+        *(position+i) = fontTable[index][i];
+	}
+    *(position+5) = 0x00;
+}
+
+void ssd1306DrawWholeString(uint8_t page, uint8_t column, const char *str) {
+    
+    char sendStr[SSD1306_WIDTH];
+    char* sendStrPointer = sendStr;
+    
+    ssd1306SetCursor(page, column);
+	while (*str) {
+		if (column > SSD1306_WIDTH - 6) {
+            ssd1306SendMultipleData((uint8_t*)sendStr, (uint8_t)(sendStrPointer-sendStr));
+			column = 0;
+			page++;
+            memset(sendStr,0,SSD1306_WIDTH);
+            sendStrPointer = sendStr;
+            ssd1306SetCursor(page, column);
+			if (page >= SSD1306_PAGES)
+				break; // display is over
+		}
+        
+		prepareChar(*str++,sendStrPointer);
+        sendStrPointer+=6;
+		column += 6;
+	}
+    ssd1306SendMultipleData((uint8_t*)sendStr, (uint8_t)(sendStrPointer-sendStr));
 }
 
 void ssd1306DrawString(uint8_t page, uint8_t column, const char *str) {

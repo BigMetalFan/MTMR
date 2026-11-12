@@ -22,5 +22,6 @@ void ssd1306DrawChar(uint8_t page, uint8_t column, char c);
 void ssd1306DrawString(uint8_t page, uint8_t column, const char *str);
 void ssd1306DrawInt(uint8_t page, uint8_t column, int32_t num);
 void ssd1306DrawFloat(uint8_t page, uint8_t column, float num, uint8_t decimals);
+void ssd1306DrawWholeString(uint8_t page, uint8_t column, const char *str);
 
 #endif /* SSD1306_H_ */

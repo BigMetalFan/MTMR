@@ -42,5 +42,11 @@ int main(void)
         ssd1306DrawString(2, 0, menuText[0]);
         ssd1306DrawString(3, 0, menuText[1]);
         ssd1306DrawString(4, 0, menuText[2]);
+        
+        
+        ssd1306DrawWholeString(0, 0, "RGB Controller");
+        ssd1306DrawWholeString(2, 0, menuText[0]);
+        ssd1306DrawWholeString(3, 0, menuText[1]);
+        ssd1306DrawWholeString(4, 0, menuText[2]);
     }
 }

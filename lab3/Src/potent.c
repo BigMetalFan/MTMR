@@ -48,6 +48,7 @@ void initMeasure(uint32_t clockFreq){
     DMA2_Stream0->M0AR = (uint32_t)valArray;
     DMA2_Stream0->NDTR = 2;
     DMA2_Stream0->CR |= DMA_SxCR_EN;
+    ADC1->CR2 |= ADC_CR2_ADON;
     NVIC_EnableIRQ(DMA2_Stream0_IRQn);
 }
 
