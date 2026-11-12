@@ -3,7 +3,9 @@
 
 #include "main.h"
 
-void customDelay(uint16_t delay);
-void sysTickInit(uint32_t clockFreq);
+void customDelayMs(uint32_t delay);
+void sysTickInit(uint32_t clockPeriod);
+void customDelayUs(uint32_t delay);
+
 
 #endif

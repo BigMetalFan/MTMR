@@ -61,14 +61,7 @@ void ssd1306SetCursor(uint8_t page, uint8_t column) {
 
 void ssd1306Clear(void) {
 
-	for (uint8_t page = 0; page < SSD1306_PAGES; page++) {
-
-		ssd1306SetCursor(page, 0);
-		for (uint8_t col = 0; col < SSD1306_WIDTH; col++) {
-
-			ssd1306SendData(0x00);
-		}
-	}
+    i2cWriteConstant(SSD1306_ADDR, SSD1306_DATA, 0, SSD1306_WIDTH*SSD1306_PAGES);
 }
 
 void ssd1306DrawChar(uint8_t page, uint8_t column, char c) {
